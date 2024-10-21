@@ -1,5 +1,5 @@
-import FiltroUser from "@/app/componentes/filtroUser";
-import Usuarios from "@/app/componentes/usuarios_component";
+import FiltroUser from "@/components/filtroUser";
+import Usuarios from "@/components/usuarios_component";
 import { auth } from "@/lib/auth_confg";
 import UserProvider from "@/provider/UserProvider";
 import { Box, Divider, Flex, Heading, Link, Text } from "@chakra-ui/react";

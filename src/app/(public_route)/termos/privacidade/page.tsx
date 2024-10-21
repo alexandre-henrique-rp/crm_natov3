@@ -4,8 +4,7 @@ import {
   Text,
   UnorderedList,
   ListItem,
-  Link,
-  Flex,
+  Flex
 } from "@chakra-ui/react";
 
 function PrivacyPolicyPage() {
@@ -19,14 +18,14 @@ function PrivacyPolicyPage() {
       flexDir={"column"}
     >
       <Box
-          w="50%"
-          m={5}
-          h="100%"
-          p={10}
-          bg="white"
-          borderRadius={8}
-          boxShadow="lg"
-        >
+        w="50%"
+        m={5}
+        h="100%"
+        p={10}
+        bg="white"
+        borderRadius={8}
+        boxShadow="lg"
+      >
         <Heading as="h2" size="xl" mb={6} textAlign="center">
           Política de Privacidade
         </Heading>

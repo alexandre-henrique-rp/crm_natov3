@@ -1,12 +1,10 @@
 "use client"; // Marca o componente para uso no cliente
-
-import { BotaoRetorno } from "@/app/componentes/btm_retorno";
-import { CardCreateUpdate } from "@/app/implementes/cardCreateUpdate";
 import UserRegisterProvider from "@/provider/UserRegister";
-import { Box, Button, Divider, Flex, Heading, Spacer, useToast } from "@chakra-ui/react";
-import React from "react";
-import BotaoCancelar from "@/app/componentes/btn_cancelar"; 
+import { Box, Button, Divider, Flex, Heading, Spacer } from "@chakra-ui/react";
 import UserCreate from "@/actions/user/create";
+import { BotaoRetorno } from "@/components/botoes/btm_retorno";
+import { CardCreateUpdate } from "@/implementes/cardCreateUpdate";
+import BotaoCancelar from "@/components/botoes/btn_cancelar";
 
 export default function CadastrarUsuario() {
 

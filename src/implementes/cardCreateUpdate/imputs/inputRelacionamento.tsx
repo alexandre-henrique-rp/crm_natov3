@@ -16,10 +16,11 @@ import {
   PopoverHeader,
   PopoverTrigger,
   Text,
-  useToast,
+  useToast
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { FaPlus } from "react-icons/fa";
+import { FaRegTrashCan } from "react-icons/fa6";
 import { mask, unMask } from "remask";
 
 interface InputRelacionamentoProps extends InputProps {
@@ -43,8 +44,8 @@ export function InputRelacionamento({
     const request = await fetch(`/api/consulta/cpf/${Relacionamento}`, {
       method: "GET",
       headers: {
-        "Content-Type": "application/json",
-      },
+        "Content-Type": "application/json"
+      }
     });
 
     const data = await request.json();
@@ -60,8 +61,8 @@ export function InputRelacionamento({
           email: retorno.email,
           createdAt: retorno.createdAt,
           dt_nascimento: retorno.dt_nascimento,
-          telefone: retorno.telefone,
-        },
+          telefone: retorno.telefone
+        }
       ];
       setRelacionamentoData(ArrayData);
 
@@ -70,7 +71,7 @@ export function InputRelacionamento({
         description: "Relacionamento adicionado com sucesso",
         status: "success",
         duration: 3000,
-        isClosable: true,
+        isClosable: true
       });
       setRelacionamento("");
     } else {
@@ -79,21 +80,21 @@ export function InputRelacionamento({
         description: "Cpf não tem cadastro no sistema",
         status: "error",
         duration: 3000,
-        isClosable: true,
+        isClosable: true
       });
     }
   };
 
   const handleDelete = async (cpf: string) => {
-   const Filer = RelacionamentoData.filter((item: any) => item.cpf !== cpf);
-   setRelacionamentoData(Filer);
-   Toast({
-    title: "Relacionamento excluído",
-    description: "Relacionamento excluído com sucesso",
-    status: "success",
-    duration: 3000,
-    isClosable: true,
-   })
+    const Filer = RelacionamentoData.filter((item: any) => item.cpf !== cpf);
+    setRelacionamentoData(Filer);
+    Toast({
+      title: "Relacionamento excluído",
+      description: "Relacionamento excluído com sucesso",
+      status: "success",
+      duration: 3000,
+      isClosable: true
+    });
   };
 
   const MaskCpf = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -152,7 +153,7 @@ export function InputRelacionamento({
                       {item?.cpf}
                     </Link>
                     <IconButton
-                      icon={<FaPlus />}
+                      icon={<FaRegTrashCan />}
                       aria-label={"remover"}
                       onClick={() => handleDelete(item?.cpf)}
                       colorScheme={"cyan"}

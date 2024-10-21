@@ -1,29 +1,27 @@
-
-import { BotaoRetorno } from "@/app/componentes/btm_retorno";
-import { Box, Button, Divider, Flex, Heading, Spacer } from "@chakra-ui/react";
+import { Box, Divider, Flex, Heading } from "@chakra-ui/react";
 import React from "react";
 import { Metadata } from "next";
-import { CardUpdateUsuario } from "@/app/componentes/card_update_usuario";
-import { GetUser, UpdateUser } from "@/actions/user/service";
+import { GetUser } from "@/actions/user/service";
+import { BotaoRetorno } from "@/components/botoes/btm_retorno";
+import { CardUpdateUsuario } from "@/components/card_update_usuario";
 
 type Props = {
   params: { id: string };
 };
 
-export async function generateMetadata({params}: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const id = params.id;
-  const data = await GetUser(Number(id))
+  const data = await GetUser(Number(id));
 
   return {
-    title: `Editar Usuário: ${data?.nome || 'Usuário'}`,
-  }
+    title: `Editar Usuário: ${data?.nome || "Usuário"}`
+  };
 }
 
-export default async function EditarUsuario({params}: Props) {
-
+export default async function EditarUsuario({ params }: Props) {
   const id = Number(params.id);
 
-  const data = await GetUser(id)
+  const data = await GetUser(id);
 
   return (
     <>
